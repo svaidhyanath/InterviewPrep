@@ -1,0 +1,42 @@
+Difference between nf-if and ng-show?
+
+in ng-if the Element is part of the DOM only if the expression computes to true whereas in ng-show the Element is part of the DOM but is only visible if the expression computes to true
+
+
+package.json & bower.json difference?
+
+package.json keps track of all the server side dependencies and node-modules. Bower.json is for the client side
+Npm and Bower are both dependency management tools. But the main difference between both is npm is used for installing Node js modules but bower js is used for managing front end components like html, css, js etc.
+
+
+IIFE?
+
+Immediately invoked functional expression. It is an anonymous function expression that is immediately invoked
+(function(){})()
+Because JavaScript has function-level scope, all the variables declared in this anonymous function are local variables and therefore cannot be accessed outside the anonymous function.
+The most popular use of the IIFE is to avoid declaring variables in the global scope.
+
+
+Closure in Javascript?
+
+A closure is an inner function that has access to the outer (enclosing) function's variables—scope chain. The closure has three scope chains: it has access to its own scope (variables defined between its curly brackets), it has access to the outer function's variables, and it has access to the global variables.
+eg: 
+var a = 1;var b = 9;
+
+function f1(){ var a = 5; var b = 5; f2(); a = a+1; b = b-2;console.log('f1',a,b);}
+
+function f2(){ console.log('f2',a,b); a = a+1; }
+
+console.log('global',a,b);
+
+f1();
+console.log('global-after',a,b);
+output:  /// 
+global 1 9
+
+f2 1 9
+f1 6 3
+
+global-after 2 9
+
+
